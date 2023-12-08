@@ -68,14 +68,12 @@ public class Avenger implements Comparable<Avenger> {
 		performerFreq++;
 	}
 	
-	@Override
 	public int compareTo(Avenger other) {
 		if (other == null)
 			return -1;
 		return this.getAlias().compareTo(other.getAlias());
 	}
 
-	@Override
 	public boolean equals(Object other) {
 		if (other == null)
 			return false;
@@ -93,7 +91,7 @@ public class Avenger implements Comparable<Avenger> {
                 + "(n: " + nameFreq 
                 + " + a: " + aliasFreq 
                 + " + p: " +  performerFreq 
-                + ")" + " time(s)";  
+                + ")" + " time(s)";   
 	}
 
 	public int getTotalFrequency() {

@@ -2,7 +2,6 @@ import java.util.Comparator;
 
 public class AvengerComparatorFreqDesc implements Comparator <Avenger>{
 
-	@Override
 	/**
 	 * Total order:
 	 * descending order of total frequency 
@@ -12,7 +11,7 @@ public class AvengerComparatorFreqDesc implements Comparator <Avenger>{
 		int diff = a2.getTotalFrequency() - a1.getTotalFrequency();
 		if (diff == 0) {
 			return a1.getPerformer().compareTo(a2.getPerformer());
-		}
+		} 
 		return diff;
 	}
 }

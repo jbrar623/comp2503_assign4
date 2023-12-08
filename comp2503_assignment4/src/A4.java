@@ -12,13 +12,10 @@ import java.util.Comparator;
 /**
  * COMP 2503 Fall 2023 Assignment 4
  * 
- * This program must read a input stream and keeps track of the frequency at
- * which an avenger is mentioned either by name or alias or performer's last name. The program must use HashMaps
- * for keeping track of the Avenger Objects, and it must use TreeMaps
- * for storing the data. 
+ * This program reads an input stream and keeps track of the frequency at
+ * which an avenger is mentioned either by name or alias or performer's last name. The program uses a HashMap
+ * for keeping track of the Avenger Objects, and TreeMaps for storing the data. 
  * 
- * @author Maryam Elahi
- * @date Fall 2023
  */
 
 public class A4 {
@@ -30,11 +27,10 @@ public class A4 {
 			{ "spiderman", "parker", "holland" }, { "wintersoldier", "barnes", "stan" } };
 
 	private int topN = 4;
-	private int totalwordcount = 0;
+	private int totalWordCount = 0;
 	private int mentionIndex = 0;
 	private Scanner input = new Scanner(System.in);
 	
-
 	/* TODO:
 	 * Create the necessary hashMap and treeMap objects to keep track of the Avenger objects 
 	 * Remember that a hashtable does not keep any inherent ordering for its contents.
@@ -46,29 +42,12 @@ public class A4 {
 	 * TreeMap constructor. 
 	 */
 	
-//	Comparator<Avenger> compMentionOrder = new AvengerComparatorMentionOrder();
-//	Comparator<Avenger> compFreqDesc = new AvengerComparatorFreqDesc();
-//	Comparator<Avenger> performerComp = new AvengerPerformerComparatorFreqDesc();
-	
-	
 	private HashMap<String, Avenger> avengersMap = new HashMap<>();
-	
     private TreeMap<Avenger, Avenger> alphabeticalMap = new TreeMap<>();
-    
     private TreeMap<Avenger, Avenger> mentionOrderMap = new TreeMap<>(new AvengerComparatorMentionOrder());
     private TreeMap<Avenger, Avenger> mostPopularAvengerMap = new TreeMap<>(new AvengerComparatorFreqDesc());
     private TreeMap<Avenger, Avenger> mostPopularPerformerMap = new TreeMap<>(new AvengerPerformerComparatorFreqDesc());
-    /*
-     * error because the tree map constructor takes a comparator that compares the key and not the value, 
-     * in this case the key is string, but my comparators are avenger, the problem is how to fix this???? 
-     * solution is changing the order of the key and the mapped value types (k,v)???
-     * - changing the order, or reversing the string and key pair makes my print method not work as i am using 
-     * the avenger to string method which requires the maps to store avenger objects,  so the value in the treemap must be avengers 
-     */
-   
     
-	
-	
 	public static void main(String[] args) {
 		A4 a4 = new A4();
 		a4.run();
@@ -93,19 +72,6 @@ public class A4 {
 		 * the 'key set' of the HashMap and use the next() method in a loop
 		 * to get each word object. 
 		 */		
-		
-//		  Set<Avenger> avengersSet = avengersMap.keySet();
-//	      Iterator<Avenger> iterator = avengersSet.iterator();
-//
-//	        while (iterator.hasNext()) {
-//	            Avenger avengerKey = iterator.next();
-//	            Avenger avenger = avengersMap.get(avengerKey);
-//
-//	            alphabeticalMap.put(avengerKey, avenger);
-//	            mentionOrderMap.put(avengerKey, avenger);
-//	            mostPopularAvengerMap.put(avengerKey, avenger);
-//	            mostPopularPerformerMap.put(avengerKey, avenger);
-//	        }
 		
 		// Create an iterator over the key set of avengersMap
 	    Iterator<String> avengerIterator = avengersMap.keySet().iterator();
@@ -149,21 +115,24 @@ public class A4 {
 	        String word = cleanWord(input.next());
 
 	        if (word.length() > 0) {
-	            totalwordcount++;
+	            totalWordCount++;
 	            Avenger newAvengerObject = createAvengerObject(word);
 	            
 	            if (newAvengerObject != null) {
-	            String avengerKey = newAvengerObject.getAlias(); 
+	            String avengerKeyAlias = newAvengerObject.getAlias(); 
+
 	            
-	            if (avengersMap.containsKey(avengerKey)) {
+	            if (avengersMap.containsKey(avengerKeyAlias) ) {
 	            	//avenger already exists in map
 	    	      	newAvengerObject.addFrequency(word); 
+	    	      	avengersMap.get(avengerKeyAlias).addFrequency(word);
 	    	      	//increase frequency for existing avenger 
 	    	      	}
 	    	      	else {
-	    	      	avengersMap.put(newAvengerObject.getName(), newAvengerObject);
 	    	      	//add new avenger if it doesn't exist in the map using put, could also use putIfAbsent which checks again 
+	    	    	newAvengerObject.addFrequency(word); 
 	    	      	newAvengerObject.setMentionIndex(mentionIndex++);
+	    	      	avengersMap.put(newAvengerObject.getAlias(), newAvengerObject);
 	    	      	}
 	            }
 	        }
@@ -194,7 +163,6 @@ public class A4 {
 		return ret;
 	}
 
-
 	/**
 	 * print the results
 	 */
@@ -211,51 +179,44 @@ public class A4 {
 		 * or over the values 'collection' in the TreeMap.
 		 * 
 		 */
+		System.out.println("Total number of words: " + totalWordCount + "\n");
+		System.out.println("Number of Avengers Mentioned: " + mentionOrderMap.size()+ "\n");
 		System.out.println();
-		System.out.println("Total number of words: " + totalwordcount);
-		System.out.println("Number of Avengers Mentioned: " + mentionOrderMap.size());
-		System.out.println();
-		
-	    System.out.println("All avengers in the order they appeared in the input stream:");
-	    printAvengersInOrderOfAppearance();
+	
+	    System.out.println("All avengers in the order they appeared in the input stream:\n");
+	    printAvengers(mentionOrderMap);
 	    System.out.println();
 
-	    System.out.println("Top " + topN + " most popular avengers:");
+	    System.out.println("Top " + topN + " most popular avengers:\n");
 	    printPopularAvengers(mostPopularAvengerMap);
 	    System.out.println();
 
-	    System.out.println("Top " + topN + " most popular performers:");
+	    System.out.println("Top " + topN + " most popular performers:\n");
 	    printPopularAvengers(mostPopularPerformerMap);
 	    System.out.println();
 
-	    System.out.println("All mentioned avengers in alphabetical order:");
-	    printAvengersInOrder();
-	    System.out.println();
+	    System.out.println("All mentioned avengers in alphabetical order:\n");
+	    printAvengers(alphabeticalMap);
+	    System.out.println();   
 	}
 
-	private void printAvengersInOrderOfAppearance() {
-	    // Iterate through the avengers in the mention order
-	    for (Avenger avenger : mentionOrderMap.values()) {
-	        System.out.println(avenger.toString());
+	private void printAvengers(TreeMap<Avenger, Avenger> avengersToPrint) {
+	    // Iterate through the avengers in the given map in it's pre-existing order
+	    for (Avenger avenger : avengersToPrint.values()) {
+	        System.out.println(avenger.toString() + "\n");
 	    }
 	}
 
-	private void printPopularAvengers(TreeMap<Avenger, Avenger> mostPopularAvengerMap) {
+	private void printPopularAvengers(TreeMap<Avenger, Avenger> popularityMap) {
 	    // Iterate through the top N most popular avengers
 	    int count = 0;
-	    for (Avenger avenger : mostPopularAvengerMap.values()) {
+	    for (Avenger avenger : popularityMap.values()) {
 	        if (count < topN) {
-	            System.out.println(avenger.toString());
+	            System.out.println(avenger.toString() + "\n");
 	            count++;
 	        } else {
 	            break; }
 	    }
 	}
 
-	private void printAvengersInOrder() {
-	    // Iterate through the avengers in alphabetical order
-	    for (Avenger avenger : alphabeticalMap.values()) {
-	        System.out.println(avenger.toString());
-	    }
-	}
 }
