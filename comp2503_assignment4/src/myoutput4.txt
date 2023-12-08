@@ -1,0 +1,74 @@
+Total number of words: 13356
+
+Number of Avengers Mentioned: 10
+
+
+
+All avengers in the order they appeared in the input stream:
+
+ironman aka stark performed by downey mentioned (n: 75 + a: 14 + p: 23) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 47 + a: 18 + p: 16) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 41 + a: 43 + p: 21) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 62 + p: 20) time(s)
+
+blackwidow aka romanoff performed by johansson mentioned (n: 28 + a: 6 + p: 17) time(s)
+
+hawkeye aka barton performed by renner mentioned (n: 21 + a: 10 + p: 12) time(s)
+
+wintersoldier aka barnes performed by stan mentioned (n: 5 + a: 10 + p: 7) time(s)
+
+warmachine aka rhodes performed by cheadle mentioned (n: 15 + a: 6 + p: 9) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 13 + a: 3 + p: 4) time(s)
+
+blackpanther aka tchalla performed by boseman mentioned (n: 5 + a: 6 + p: 4) time(s)
+
+
+Top 4 most popular avengers:
+
+ironman aka stark performed by downey mentioned (n: 75 + a: 14 + p: 23) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 41 + a: 43 + p: 21) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 62 + p: 20) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 47 + a: 18 + p: 16) time(s)
+
+
+Top 4 most popular performers:
+
+ironman aka stark performed by downey mentioned (n: 75 + a: 14 + p: 23) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 41 + a: 43 + p: 21) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 62 + p: 20) time(s)
+
+blackwidow aka romanoff performed by johansson mentioned (n: 28 + a: 6 + p: 17) time(s)
+
+
+All mentioned avengers in alphabetical order:
+
+blackpanther aka tchalla performed by boseman mentioned (n: 5 + a: 6 + p: 4) time(s)
+
+blackwidow aka romanoff performed by johansson mentioned (n: 28 + a: 6 + p: 17) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 47 + a: 18 + p: 16) time(s)
+
+hawkeye aka barton performed by renner mentioned (n: 21 + a: 10 + p: 12) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 41 + a: 43 + p: 21) time(s)
+
+ironman aka stark performed by downey mentioned (n: 75 + a: 14 + p: 23) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 13 + a: 3 + p: 4) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 62 + p: 20) time(s)
+
+warmachine aka rhodes performed by cheadle mentioned (n: 15 + a: 6 + p: 9) time(s)
+
+wintersoldier aka barnes performed by stan mentioned (n: 5 + a: 10 + p: 7) time(s)
+
+
