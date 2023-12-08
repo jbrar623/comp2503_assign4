@@ -1,0 +1,24 @@
+Reflection: 
+
+Working with built-in data structures from the Java Collections Framework, 
+specifically HashMap and TreeMap, was a very different experience from implementing 
+our data structures in assignments 1–3. In assignments 1–3, I felt it was difficult 
+to distribute the work and implement the data structures as a group, as we all had 
+different coding styles, levels of understanding, and time commitments. Using the 
+built-in data structures in Assignment 4 helped make the code more streamlined and 
+less complex compared to our manual implementations. I had some issues figuring out 
+and understanding using the comparator as a parameter in the tree map constructor, but 
+after researching and asking questions, I understood how TreeMaps store values and use 
+given keys to find those values.
+
+When using linked lists and binary search trees, making sure our classes were 
+functioning to the entire required capacity was slightly demanding, as there were many 
+classes and components required that sometimes had issues. A benefit of this, however, 
+was that we could implement any methods we felt necessary and override existing methods 
+to serve our needs. While we can still do this with hashmaps and tree maps, it was easier 
+with our own generic classes, such as BST and SLL. One of the aspects of the assignment 
+that I came to appreciate after completing assignment 4 was the concept of custom 
+comparators, which we created. Overall, while some aspects of the assignments were 
+hallenging, I enjoyed implementing this Avenger data analysis program and 
+appreciated the benefits and limitations of each data structure.
+
