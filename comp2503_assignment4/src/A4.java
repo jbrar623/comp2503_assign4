@@ -31,17 +31,6 @@ public class A4 {
 	private int mentionIndex = 0;
 	private Scanner input = new Scanner(System.in);
 	
-	/* TODO:
-	 * Create the necessary hashMap and treeMap objects to keep track of the Avenger objects 
-	 * Remember that a hashtable does not keep any inherent ordering for its contents.
-	 * But for this assignment we want to be able to create the sorted lists of avenger objects.
-	 * Use TreeMap objects (which are binary search trees, and hence have an
-	 * ordering) for creating the following orders: alphabetical, mention order, most popular avenger, and most popular performer
-	 * The alphabetical order TreeMap must be constructed with the natural order of the Avenger objects.
-	 * The other three orderings must be created by passing the corresponding Comparators to the 
-	 * TreeMap constructor. 
-	 */
-	
 	/**
 	 * Hashmap to store avenger obejcts using their aliases as keys
 	 */
@@ -73,20 +62,7 @@ public class A4 {
 	/**
 	 * Creates ordered TreeMaps using avengersMap and appropriate comparators.
 	 */
-	private void createdOrderedTreeMaps() {
-		/* TODO:
-		 * Create an iterator over the key set in the HashMap that keeps track of the avengers
-		 * Add avenger objects to the treeMaps with different orderings.
-		 * 
-		 ** Hint: 
-		 * Note that the HashMap and the TreeMap classes do not implement
-		 * the Iterable interface at the top level, but they have
-		 * methods that return Iterable objects, such as keySet() and entrySet().
-		 * For example, you can create an iterator object over 
-		 * the 'key set' of the HashMap and use the next() method in a loop
-		 * to get each word object. 
-		 */		
-		
+	private void createdOrderedTreeMaps() {		
 		// Create an iterator over the key set of avengersMap
 	    Iterator<String> avengerIterator = avengersMap.keySet().iterator();
 
@@ -190,18 +166,6 @@ public class A4 {
 	 * prints the results of the avenger data collected based on the input 
 	 */
 	private void printResults() {
-		/*
-		 * Please first read the documentation for TreeMap to see how to 
-		 * iterate over a TreeMap data structure in Java.
-		 *  
-		 * Hint for printing the required list of avenger objects:
-		 * Note that the TreeMap class does not implement
-		 * the Iterable interface at the top level, but it has
-		 * methods that return Iterable objects.
-		 * You must either create an iterator over the 'key set',
-		 * or over the values 'collection' in the TreeMap.
-		 * 
-		 */
 		System.out.println("Total number of words: " + totalWordCount + "\n");
 		System.out.println("Number of Avengers Mentioned: " + mentionOrderMap.size()+ "\n");
 		System.out.println();
