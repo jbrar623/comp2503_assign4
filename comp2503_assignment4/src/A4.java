@@ -206,6 +206,7 @@ public class A4 {
 		System.out.println("Number of Avengers Mentioned: " + mentionOrderMap.size()+ "\n");
 		System.out.println();
 	
+		System.out.println();
 	    System.out.println("All avengers in the order they appeared in the input stream:\n");
 	    printAvengers(mentionOrderMap);
 	    System.out.println();
