@@ -42,7 +42,15 @@ public class A4 {
 	 * TreeMap constructor. 
 	 */
 	
+	/**
+	 * Hashmap to store avenger obejcts using their aliases as keys
+	 */
 	private HashMap<String, Avenger> avengersMap = new HashMap<>();
+	
+	/**
+	 * Treemaps storing avenger objects using other avenger objects as keys ordered based on 
+	 * either natural ordering or the comparators given 
+	 */
     private TreeMap<Avenger, Avenger> alphabeticalMap = new TreeMap<>();
     private TreeMap<Avenger, Avenger> mentionOrderMap = new TreeMap<>(new AvengerComparatorMentionOrder());
     private TreeMap<Avenger, Avenger> mostPopularAvengerMap = new TreeMap<>(new AvengerComparatorFreqDesc());
@@ -53,12 +61,18 @@ public class A4 {
 		a4.run();
 	}
 
+	/**
+	 * Method to run the program that calls other methods to read input, create maps and produce output. 
+	 */
 	public void run() {
 		readInput();
 		createdOrderedTreeMaps();
 		printResults();
 	}
 
+	/**
+	 * Creates ordered TreeMaps using avengersMap and appropriate comparators.
+	 */
 	private void createdOrderedTreeMaps() {
 		/* TODO:
 		 * Create an iterator over the key set in the HashMap that keeps track of the avengers
@@ -96,8 +110,8 @@ public class A4 {
 	}
 	
 	/**
-	 * read the input stream and keep track how many times avengers are mentioned by
-	 * alias or last name.
+	 * reads the input stream and keeps track of how many times avengers are mentioned by
+	 * alias. 
 	 */
 	private void readInput() {
 		/*
@@ -119,13 +133,12 @@ public class A4 {
 	            Avenger newAvengerObject = createAvengerObject(word);
 	            
 	            if (newAvengerObject != null) {
-	            String avengerKeyAlias = newAvengerObject.getAlias(); 
+	            String avengerKey= newAvengerObject.getAlias(); 
 
-	            
-	            if (avengersMap.containsKey(avengerKeyAlias) ) {
+	            if (avengersMap.containsKey(avengerKey) ) {
 	            	//avenger already exists in map
 	    	      	newAvengerObject.addFrequency(word); 
-	    	      	avengersMap.get(avengerKeyAlias).addFrequency(word);
+	    	      	avengersMap.get(avengerKey).addFrequency(word);
 	    	      	//increase frequency for existing avenger 
 	    	      	}
 	    	      	else {
@@ -139,6 +152,11 @@ public class A4 {
 		}
 	}
 	
+	/**
+	 * Creates avenger objects 
+	 * @param word - string being used to match to a possible avenger object
+	 * @return an avenger object based on the string parameter
+	 */
 	private Avenger createAvengerObject(String word) {
 		for (int i = 0; i < avengerRoster.length; i++) {
 			if (avengerRoster[i][0].equals(word) || avengerRoster[i][1].equals(word)
@@ -149,6 +167,11 @@ public class A4 {
 		return null;
 	}
 	
+	/**
+	 * Removes excess all non-alphabetical characters from a string 
+	 * @param next - the word to clean 
+	 * @retun ret - the cleaned word 
+	 */
 	private String cleanWord(String next) {
 		// First, if there is an apostrophe, the substring
 		// before the apostrophe is used and the rest is ignored.
@@ -164,7 +187,7 @@ public class A4 {
 	}
 
 	/**
-	 * print the results
+	 * prints the results of the avenger data collected based on the input 
 	 */
 	private void printResults() {
 		/*
@@ -200,6 +223,12 @@ public class A4 {
 	    System.out.println();   
 	}
 
+	/**
+     *  Iterates through the avengers in the given map in it's pre-existing order
+     *  Prints the avengers in the given TreeMap in that order.
+     * 
+     * @param avengersToPrint The TreeMap containing avengers to be printed .
+     */
 	private void printAvengers(TreeMap<Avenger, Avenger> avengersToPrint) {
 	    // Iterate through the avengers in the given map in it's pre-existing order
 	    for (Avenger avenger : avengersToPrint.values()) {
@@ -207,6 +236,12 @@ public class A4 {
 	    }
 	}
 
+	/**
+     * Prints the top N most popular avengers in the given 
+     * TreeMap by iterating through the given map. 
+     * 
+     * @param popularityMap The TreeMap containing ordered avengers.
+     */
 	private void printPopularAvengers(TreeMap<Avenger, Avenger> popularityMap) {
 	    // Iterate through the top N most popular avengers
 	    int count = 0;
