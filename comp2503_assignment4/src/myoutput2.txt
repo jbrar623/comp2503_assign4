@@ -1,0 +1,70 @@
+
+Total number of words: 293
+
+Number of Avengers Mentioned: 8
+
+
+
+All avengers in the order they appeared in the input stream:
+
+ironman aka stark performed by downey mentioned (n: 0 + a: 1 + p: 3) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 0 + a: 1 + p: 1) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 1 + p: 0) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 0 + a: 2 + p: 3) time(s)
+
+wintersoldier aka barnes performed by stan mentioned (n: 0 + a: 2 + p: 1) time(s)
+
+blackwidow aka romanoff performed by johansson mentioned (n: 0 + a: 0 + p: 2) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 0 + a: 0 + p: 3) time(s)
+
+warmachine aka rhodes performed by cheadle mentioned (n: 0 + a: 0 + p: 1) time(s)
+
+
+
+Top 4 most popular avengers:
+
+captainamerica aka rogers performed by evans mentioned (n: 0 + a: 2 + p: 3) time(s)
+
+ironman aka stark performed by downey mentioned (n: 0 + a: 1 + p: 3) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 0 + a: 0 + p: 3) time(s)
+
+wintersoldier aka barnes performed by stan mentioned (n: 0 + a: 2 + p: 1) time(s)
+
+
+
+Top 4 most popular performers:
+
+ironman aka stark performed by downey mentioned (n: 0 + a: 1 + p: 3) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 0 + a: 2 + p: 3) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 0 + a: 0 + p: 3) time(s)
+
+blackwidow aka romanoff performed by johansson mentioned (n: 0 + a: 0 + p: 2) time(s)
+
+
+
+All mentioned avengers in alphabetical order:
+
+blackwidow aka romanoff performed by johansson mentioned (n: 0 + a: 0 + p: 2) time(s)
+
+captainamerica aka rogers performed by evans mentioned (n: 0 + a: 2 + p: 3) time(s)
+
+hulk aka banner performed by ruffalo mentioned (n: 0 + a: 1 + p: 1) time(s)
+
+ironman aka stark performed by downey mentioned (n: 0 + a: 1 + p: 3) time(s)
+
+spiderman aka parker performed by holland mentioned (n: 0 + a: 0 + p: 3) time(s)
+
+thor aka odinson performed by hemsworth mentioned (n: 0 + a: 1 + p: 0) time(s)
+
+warmachine aka rhodes performed by cheadle mentioned (n: 0 + a: 0 + p: 1) time(s)
+
+wintersoldier aka barnes performed by stan mentioned (n: 0 + a: 2 + p: 1) time(s)
+
+
